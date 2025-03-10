@@ -8,7 +8,7 @@
     "stop": "pm2 stop KAVI-EXE",
     "restart": "pm2 restart KAVI-EXE"
   },
-  "dependencies":{
+  "dependencies": {
     "@adiwajshing/keyed-db":"^0.2.4",
     "@adiwajshing/baileys": "github:@whiskeysockets/baileys",
     "@blackamda/telegram-image-url":"^1.0.0",
