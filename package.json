@@ -21,7 +21,7 @@
         "@sl-code-lords/photooxy": "^1.0.1",
         "@sl-code-lords/si-subdl": "^1.1.1",
         "@sl-code-lords/text-pro-me": "^1.0.0",
-        "@whiskeysockets/baileys": "6.6.0",
+        "@whiskeysockets/baileys": "github:AxellNetwork/Baileys",
         "@xct007/frieren-scraper": "^0.0.2",
         "adm-zip": "^0.5.16",
         "async-g-i-s":"^1.4.0",
