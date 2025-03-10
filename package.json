@@ -48,6 +48,7 @@
     "mongoose":"latest", 
     "mrnima-moviedl":"1.0.0",
     "moment-timezone" : "latest",
+    "sequelize" : "latest",
     "adm-zip": "^0.5.16"
   }
 }
