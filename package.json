@@ -13,6 +13,7 @@
     "@adiwajshing/keyed-db": "^0.2.4",
     "@dark-yasiya/yt-dl.js": "1.0.5",
     "@blackamda/telegram-image-url":"^1.0.0",
+    "@ffmpeg-installer/ffmpeg":"latest",
     "@mrnima/tiktok-downloader": "1.0.0",
     "@xaviabot/fb-downloader": "^1.0.14",
     "pino": "^7.0.5",
