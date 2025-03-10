@@ -55,6 +55,7 @@
     "nima-threads-dl-api":"latest",
     "simple-git": "latest",
     "heroku-client":"latest",
+    "async-g-i-s":"Latest",
     "sequelize": "^6.28.0",
         "sqlite3": "5.1.7",
     "adm-zip": "^0.5.16"
