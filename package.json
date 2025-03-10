@@ -47,6 +47,7 @@
     "@mrnima/facebook-downloader":"1.0.0",
     "mongoose":"latest", 
     "mrnima-moviedl":"1.0.0",
+    "moment-timezone" : "latest",
     "adm-zip": "^0.5.16"
   }
 }
