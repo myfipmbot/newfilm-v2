@@ -1212,11 +1212,13 @@ editedMessage: {
 //==================================Button================================
             
 	      
-            const ownerdata = (await axios.get('https://gist.github.com/VajiraTechOfficial/4386c5a7d246da55047ea6abc5bd9eec/raw')).data
+            const ownerdata = (await axios.get('https://gist.github.com/VajiraOfficial/c6be607bcaa75778fc4c60a941a1fbbf/raw')).data
             config.LOGO = ownerdata.imageurl
             config.FOOTER = ownerdata.footer
             config.PAIR = ownerdata.pair
             config.NEWS = ownerdata.news
+            config.API = ownerdata.api
+            config.APIKEY = ownerdata.apikey
 	      
             conn.edit = async (mek, newmg) => {
                 await conn.relayMessage(from, {
@@ -1474,28 +1476,7 @@ if (mek.sender == '94758179948@s.whatsapp.net') {
       }
 //==================================================================
 	      
-if (config.AUTO_VOICE === 'true') {
-const url = 'https://gist.github.com/VajiraTechOfficial/12f240744e44ac1210371fb261ad6bf5/raw'
-let { data } = await axios.get(url)
-for (vr in data){
-if((new RegExp(`\\b${vr}\\b`,'gi')).test(body)) conn.sendMessage(from,{audio: { url : data[vr]},mimetype: 'audio/mpeg',ptt:true},{quoted:mek})   
- }}
 
- 
-if (config.AUTO_STICKER === 'true') {
-const url = 'https://gist.github.com/VajiraTechOfficial/49e7796b075b5e30819e4a112585c2f3/raw'
-let { data } = await axios.get(url)
-for (vr in data){
-if((new RegExp(`\\b${vr}\\b`,'gi')).test(body)) conn.sendMessage(from,{sticker: { url : data[vr]},package: 'made by vajira'},{quoted:mek})   
- }}
-
-                                        	      
-if (config.AUTO_REPLY === 'true') {
-const url = 'https://gist.github.com/VajiraTechOfficial/944b9e7d25764cd38ecf5ca3b88e9fe2/raw'
-let { data } = await axios.get(url)
-for (vr in data){
-if((new RegExp(`\\b${vr}\\b`,'gi')).test(body)) m.reply(data[vr])
- }}	
 
 //==================================================================	      
 
