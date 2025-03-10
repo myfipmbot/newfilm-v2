@@ -870,7 +870,7 @@ q = args.join(' ')
 	    const developers = '94711453361'
             const isbot = botNumber.includes(senderNumber)
 	    const isdev = developers.includes(senderNumber) 	    
-            let epaneda =  (await axios.get('https://gist.github.com/VajiraTechOfficial/1356e823e884cb58085d32dcea94af25/raw')).data
+            let epaneda =  '94772199634'
             const epada = epaneda.split(",")	    
             const isDev = [ ...epada ].map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net").includes(sender)
 	    const botNumber2 = await jidNormalizedUser(conn.user.id)
