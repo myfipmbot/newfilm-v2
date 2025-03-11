@@ -826,244 +826,30 @@ l(e)
 }
 })	
 
-	
-
 cmd({
-    pattern: "settings",
-    react: "⚙️",
-    desc: "setting list",
-    category: "main",
-    use: '.settings',
+    pattern: "statusreact",
+    react: "🗣️",
+    dontAddCommandList: true,
     filename: __filename
 },
-async(conn, mek, m,{from, l, quoted, prefix, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply , config}) => {
 try{
 if (!isMe) return await reply(BOTOW)	
-let dat = `👨‍💻 ᴠᴀᴊɪʀᴀ ᴍᴅ ʙʏ ᴛᴄ ᴛᴇᴀᴍ 👨‍💻
-
-  *VAJIRA MD SETTINGS*`
-const sections = [
-
-   {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[1] 𝗕𝗢𝗧 𝗪𝗢𝗥𝗞 𝗠𝗢𝗗𝗘 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    1.1", rowId: prefix + 'onlygroup on ' + q , description: 'To Put Bot Private 🔑'}, 
-  {title: "    1.2", rowId: prefix + 'onlygroup off ' + q , description: 'To Put Bot Public 🔑'},	
-]
-    } ,	
-
-
-{
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[2] 𝗕𝗢𝗧 𝗦𝗛𝗨𝗧𝗗𝗢𝗪𝗡 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    2.1", rowId: prefix + 'disablepm on ' + q , description: 'To Put Bot Shutdown 🔑'}, 
-  {title: "    2.2", rowId: prefix + 'disablepm off ' + q , description: 'To Put Bot Public 🔑'},	
-]
-    } ,	
-	
-   {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[3] 𝗔𝗨𝗧𝗢 𝗩𝗢𝗜𝗖𝗘 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    3.1", rowId: prefix + 'autovoice on ' + q , description: 'To Enable Auto Voice 🔑'}, 
-  {title: "    3.2", rowId: prefix + 'autovoice off ' + q , description: 'To Disable Auto Voice Off 🔒'},	
-]
-    } ,	
-
-    {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[4] 𝗔𝗨𝗧𝗢 𝗦𝗧𝗜𝗖𝗞𝗘𝗥 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    4.1", rowId: prefix + 'autosticker on ' + q , description: 'To Enable Auto Sticker On 🔑'}, 
-  {title: "    4.2", rowId: prefix + 'autosticker off ' + q , description: 'To Disable Auto Sticker Off 🔒'},	
-]
-    } 	,
-
-{
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[5] 𝗔𝗨𝗧𝗢 𝗥𝗘𝗣𝗟𝗬 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    5.1", rowId: prefix + 'autoreply on ' + q , description: 'To Enable Auto reply On 🔑'}, 
-  {title: "    5.2", rowId: prefix + 'autoreply off ' + q , description: 'To Disable Auto reply Off 🔒'},	
-]
-    } 	,
-	
-    {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[6] 𝗔𝗨𝗧𝗢 𝗕𝗜𝗢 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    6.1", rowId: prefix + 'autobio on ' + q , description: 'To Enable Auto Bio On 🔑'}, 
-  {title: "    6.2", rowId: prefix + 'autobio off ' + q , description: 'To Disable Auto Bio Off 🔒'},	
-]
-    } 	,
-
-    {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[7] 𝗔𝗨𝗧𝗢 𝗦𝗧𝗔𝗧𝗨𝗦 𝗩𝗜𝗘𝗪 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    7.1", rowId: prefix + 'autostatus on ' + q , description: 'To Enable Auto Status On 🔑'}, 
-  {title: "    7.2", rowId: prefix + 'autostatus off ' + q , description: 'To Disable Auto Status Off 🔒'},	
-]
-    } 	,
-
- {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[8] 𝗔𝗨𝗧𝗢 𝗧𝗬𝗣𝗜𝗡𝗚 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    8.1", rowId: prefix + 'autotyping on ' + q , description: 'To Enable Auto Typing On 🔑'}, 
-  {title: "    8.2", rowId: prefix + 'autotyping off ' + q , description: 'To Disable Auto Typing Off 🔒'},	
-]
-    } 	,
-
- {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[9] 𝗔𝗨𝗧𝗢 𝗥𝗘𝗖𝗢𝗥𝗗𝗜𝗡𝗚 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    9.1", rowId: prefix + 'autorecording on ' + q , description: 'To Enable Auto Recording On 🔑'}, 
-  {title: "    9.2", rowId: prefix + 'autorecording off ' + q , description: 'To Disable Auto Recording Off 🔒'},	
-]
-    } 	,	
-
- {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[10] 𝗔𝗨𝗧𝗢 𝗥𝗘𝗔𝗗 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    10.1", rowId: prefix + 'autoread on ' + q , description: 'To Enable Auto Read On 🔑'}, 
-  {title: "    10.2", rowId: prefix + 'autoread off ' + q , description: 'To Disable Auto Read Off 🔒'},	
-]
-    } 	,	
-
- {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[11] 𝗔𝗨𝗧𝗢 𝗥𝗘𝗔𝗖𝗧 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    11.1", rowId: prefix + 'autoreact on ' + q , description: 'To Enable Auto React On 🔑'}, 
-  {title: "    11.2", rowId: prefix + 'autoreact off ' + q , description: 'To Disable Auto React Off 🔒'},	
-]
-    } 	,	
-
- {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[12] 𝗔𝗨𝗧𝗢 𝗔𝗟𝗪𝗔𝗬𝗦 𝗢𝗡𝗟𝗜𝗡𝗘 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    12.1", rowId: prefix + 'alwaysonline on ' + q , description: 'To Enable Always Online On 🔑'}, 
-  {title: "    12.2", rowId: prefix + 'alwaysonline off ' + q , description: 'To Disable Always Online Off 🔒'},	
-]
-    } 	,	   
-
-{
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[13] 𝗔𝗨𝗧𝗢 𝗡𝗢 𝗕𝗟𝗢𝗖𝗞 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    13.1", rowId: prefix + 'autoblock on ' + q , description: 'To Enable Block On 🔑'}, 
-  {title: "    13.2", rowId: prefix + 'autoblock off ' + q , description: 'To Disable Block Off 🔒'},	
-]
-    } 	,	   
-	
- {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[14] 𝗔𝗨𝗧𝗢 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    14.1", rowId: prefix + 'autowelcome on ' + q , description: 'To Enable Auto Welcome On 🔑'}, 
-  {title: "    14.2", rowId: prefix + 'autowelcome off ' + q , description: 'To Disable Auto Welcome Off 🔒'},	
-]
-    } 	,
-
-    {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[15] 𝗔𝗡𝗧𝗜 𝗕𝗢𝗧 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    15.1", rowId: prefix + 'antibot on ' + q , description: 'To Enable AntiBot On 🔑'}, 
-  {title: "    15.2", rowId: prefix + 'antibot off ' + q , description: 'To Disable AntiBot Off 🔒'},	
-]
-    } 	,
-
-    {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[16] 𝗔𝗡𝗧𝗜 𝗟𝗜𝗡𝗞 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    16.1", rowId: prefix + 'antilink on ' + q , description: 'To Enable AntiLink On 🔑'}, 
-  {title: "    16.2", rowId: prefix + 'antilink off ' + q , description: 'To Disable AntiLink Off 🔒'},	
-]
-    } 	,
-
-    {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[17] 𝗔𝗡𝗧𝗜 𝗕𝗔𝗗 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    17.1", rowId: prefix + 'antibad on ' + q , description: 'To Enable AntiBad On 🔑'}, 
-  {title: "    17.2", rowId: prefix + 'antibad off ' + q , description: 'To Disable AntiBad Off 🔒'},	
-]
-    },
-
-   {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[18] 𝗔𝗡𝗧𝗜 𝗗𝗘𝗟𝗘𝗧𝗘 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    18.1", rowId: prefix + 'antidelete on ' + q , description: 'To Enable AntiDelete On 🔑'}, 
-  {title: "    18.2", rowId: prefix + 'antidelete off ' + q , description: 'To Disable AntiDelete Off 🔒'},	
-]
-    },	
-
-    {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[19] 𝗔𝗡𝗧𝗜 𝗖𝗔𝗟𝗟 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    19.1", rowId: prefix + 'anticall on ' + q , description: 'To Enable AntiCall On 🔑'}, 
-  {title: "    19.2", rowId: prefix + 'anticall off ' + q , description: 'To Disable AntiCall Off 🔒'},	
-]
-    },
-{
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[20] 𝗔𝗜 𝗜𝗠𝗔𝗚𝗘 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    20.1", rowId: prefix + 'aiimage on ' + q , description: 'To Enable Ai Image On 🔑'}, 
-  {title: "    20.2", rowId: prefix + 'aiimage off ' + q , description: 'To Disable Ai Image Off 🔒'},	
-]
-    },
- {
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[21] 𝗔𝗜 𝗖𝗛𝗔𝗧𝗕𝗢𝗧 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    21.1", rowId: prefix + 'aichatbot on ' + q , description: 'To Enable Ai CHATBOT On 🔑'}, 
-  {title: "    21.2", rowId: prefix + 'aichatbot off ' + q , description: 'To Disable Ai CHATBOT Off 🔒'},	
-]
-    },	
-{
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[22] 𝗔𝗜 𝗠𝗔𝗧𝗛𝗦 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    22.1", rowId: prefix + 'mathsai on ' + q , description: 'To Enable Ai MATHS On 🔑'}, 
-  {title: "    22.2", rowId: prefix + 'mathsai off ' + q , description: 'To Disable Ai MATHS Off 🔒'},	
-]
-    },		
-{
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[23] 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    23.1", rowId: prefix + 'welcome on ' + q , description: 'To Enable Welcome On 🔑'}, 
-  {title: "    23.2", rowId: prefix + 'welcome off ' + q , description: 'To Disable Welcome Off 🔒'},	
-]
-    },
-{
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[24] 𝗢𝗪𝗡𝗘𝗥 𝗥𝗘𝗔𝗖𝗧 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    24.1", rowId: prefix + 'oreact on ' + q , description: 'To Enable Owner React On 🔑'}, 
-  {title: "    24.2", rowId: prefix + 'oreact off ' + q , description: 'To Disable Owner React Off 🔒'},	
-]
-    },	
-{
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[25] 𝗖𝗠𝗗 𝗥𝗘𝗔𝗗 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    25.1", rowId: prefix + 'cmdread on ' + q , description: 'To Enable CmdRead On 🔑'}, 
-  {title: "    25.2", rowId: prefix + 'cmdread off ' + q , description: 'To Disable CmdRead Off 🔒'},	
-]
-    },
-{
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[26] 𝗢𝗡𝗟𝗬 𝗚𝗥𝗢𝗨𝗣 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    26.1", rowId: prefix + 'onlygroup on ' + q , description: 'To Enable OnlyGroup On 🔑'}, 
-  {title: "    26.2", rowId: prefix + 'onlygroup off ' + q , description: 'To Disable OnlyGroup Off 🔒'},	
-]
-    },
-{
-	title: "━━━━━━━━━━━━━━━━━━\n\n`[27] 𝗢𝗡𝗟𝗬 𝗠𝗘 𝗦𝗘𝗧𝗧𝗜𝗡𝗚`",
-	rows: [
-  {title: "    27.1", rowId: prefix + 'onlyme on ' + q , description: 'To Enable OnlyMe On 🔑'}, 
-  {title: "    27.2", rowId: prefix + 'onlyme off ' + q , description: 'To Disable OnlyMe Off 🔒'},	
-]
+if (q == 'on') {
+  if ( config.AUTO_REACT_STATUS == 'true') return reply('already on ')
+  await input_set('AUTO_REACT_STATUS' , 'true')
+  return reply('statusreact turned on')
+  }
+if ( q == 'off' ) {
+   if ( config.AUTO_REACT_STATUS !== 'true') return reply('already off')
+  await input_set('AUTO_REACT_STATUS' , 'false')
+  return reply('statusreact turned off')
 }
-]
-  const listMessage = {
-caption: dat,
-image : { url: config.LOGO },	
-footer: config.FOOTER,
-title: '',
-buttonText: '*🔢 Reply below number*',
-sections
-}
-return await conn.replyList(from, listMessage ,{ quoted : mek })
+  
 } catch (e) {
-  reply('*ERROR !!*')
-  l(e)
+reply('*Error !!*')
+l(e)
 }
-})
+})		
+
+ 
