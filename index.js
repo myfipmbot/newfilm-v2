@@ -712,6 +712,14 @@ events.commands.map(async (command) => {
   }
 });
 
+//=======HRT React 
+if (!isReact && senderNumber !== botNumber) {
+    if (config.HEART_REACT === 'true') {
+            const reactions = ['💘', '💝', '💖', '💗', '💓', '💞', '💕', '❣️', '❤️‍🔥', '❤️‍🩹', '❤️', '🩷', '🧡', '💛', '💚', '💙', '🩵', '💜', '🤎', '🖤', '🩶', '🤍'];
+           const randomReaction = reactions[Math.floor(Math.random() * reactions.length)]; // 
+        m.react(randomReaction);
+    }
+}
 
 
 
