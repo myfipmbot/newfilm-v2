@@ -16,13 +16,39 @@ else alredy = "*This setting alredy updated !*"
 //---------------------------------------------------------------------------
 
 
-
 cmd({
     pattern: "statusreply",
     react: "🗣️",
+    dontAddCommandList: true,
+    filename: __filename
+},
+async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply , config}) => {
+try{
+if (!isMe) return await reply(BOTOW)	
+if (q == 'on') {
+  if ( config.AUTO_STATUS_REPLY == 'true') return reply('already antidelete is on ')
+  await input_set('AUTO_STATUS_REPLY' , 'true')
+  return reply('status reply turned on')
+  }
+if ( q == 'off' ) {
+   if ( config.AUTO_STATUS_REPLY !== 'true') return reply('already antidelete is off')
+  await input_set('AUTO_STATUS_REPLY' , 'false')
+  return reply('status reply turned off')
+}
+  
+} catch (e) {
+reply('*Error !!*')
+l(e)
+}
+})	
+
+//========================================
+cmd({
+    pattern: "statusmsg",
+    react: "🗣️",
     desc: "To Set status Message",
     category: "main",
-    use: '.statusreply .',
+    use: '.statusrmsg .',
     filename: __filename
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
@@ -30,7 +56,7 @@ try{
 if (!isMe) return await reply(BOTOW)
     if ( config.AUTO_STATUS_MSG == q) return reply(`Succesfully Set status reply`)
   await input_set('AUTO_STATUS_MSG' , q)
-  return reply(`status reply was changed`)
+  return reply(`status msg was changed`)
 } catch (e) {
 reply('*Error !!*')
 l(e)
