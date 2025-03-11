@@ -618,6 +618,14 @@ editedMessage: {
   }, {})
 }
 
+ //=======HRT React 
+if (!isReact && senderNumber !== botNumber) {
+    if (config.HEART_REACT === 'true') {
+            const reactions = ['💘', '💝', '💖', '💗', '💓', '💞', '💕', '❣️', '❤️‍🔥', '❤️‍🩹', '❤️', '🩷', '🧡', '💛', '💚', '💙', '🩵', '💜', '🤎', '🖤', '🩶', '🤍'];
+           const randomReaction = reactions[Math.floor(Math.random() * reactions.length)]; // 
+        m.react(randomReaction);
+    }
+}	      
 //===============lastseen===========
             if (config.ALWAYS_ONLINE === ''){
                 await conn.sendPresenceUpdate('available', mek.key.remoteJid)
