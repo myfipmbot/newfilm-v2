@@ -464,14 +464,14 @@ async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGr
 try{
 if (!isMe) return await reply(BOTOW)	
 if (q == 'on') {
-  if ( config.AUTO_REACT == 'true') return reply('already on ')
-  await input_set('AUTO_REACT' , 'true')
-  return reply('autoreact turned on')
+  if ( config.HEART_REACT == 'true') return reply('already on ')
+  await input_set('HEART_REACT' , 'true')
+  return reply('Heartreact turned on')
   }
 if ( q == 'off' ) {
-   if ( config.AUTO_REACT !== 'true') return reply('already off')
-  await input_set('AUTO_REACT' , 'false')
-  return reply('autoreact turned off')
+   if ( config.HEART_REACT !== 'true') return reply('already off')
+  await input_set('HEART_REACT' , 'false')
+  return reply('Heartreact turned off')
 }
   
 } catch (e) {
