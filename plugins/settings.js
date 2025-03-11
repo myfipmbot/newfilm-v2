@@ -625,13 +625,13 @@ async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGr
 try{
 if (!isMe) return await reply(BOTOW)	
 if (q == 'on') {
-  if ( config.AUTO_STATUS_READ == 'true') return reply('already on ')
-  await input_set('AUTO_STATUS_READ' , 'true')
+  if ( config.AUTO_READ_STATUS == 'true') return reply('already on ')
+  await input_set('AUTO_READ_STATUS' , 'true')
   return reply('autostatus turned on')
   }
 if ( q == 'off' ) {
-   if ( config.AUTO_STATUS_READ !== 'true') return reply('already off')
-  await input_set('AUTO_STATUS_READ' , 'false')
+   if ( config.AUTO_READ_STATUS !== 'true') return reply('already off')
+  await input_set('AUTO_READ_STATUS' , 'false')
   return reply('autostatus turned off')
 }
   
