@@ -18,27 +18,6 @@ else alredy = "*This setting alredy updated !*"
 
 
 cmd({
-    pattern: "newsactivate",
-    react: "🗣️",
-    desc: "To Activate auto news",
-    category: "main",
-    use: '.setprefix .',
-    filename: __filename
-},
-async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
-if (!isMe) return await reply(BOTOW)
-    if ( config.N_JID == q) return reply(`Succesfully News Change To This Section`)
-  await input_set('N_JID' , q)
-  return reply(`News was changed`)
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-})
-
-
-cmd({
     pattern: "statusreply",
     react: "🗣️",
     desc: "To Set status Message",
