@@ -79,37 +79,7 @@ l(e)
 }
 })	
 	
-
-cmd({
-    pattern: "autoreply",
-    react: "🗣️",
-    dontAddCommandList: true,
-    filename: __filename
-},
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply , config}) => {
-try{
-if (!isMe) return await reply(BOTOW)	
-if (q == 'on') {
-  if ( config.AUTO_REPLY == 'true') return reply('already Auto reply is on ')
-  await input_set('AUTO_REPLY' , 'true')
-  return reply('Auto Reply turned on')
-  }
-if ( q == 'off' ) {
-   if ( config.AUTO_REPLY !== 'true') return reply('already Auto reply is off')
-  await input_set('AUTO_REPLY' , 'false')
-  return reply('Auto Reply turned off')
-}
-  
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-})	
-
-
-
-
-	
+//===================	
 cmd({
     pattern: "oreact",
     react: "🗣️",
@@ -134,8 +104,9 @@ if ( q == 'off' ) {
 reply('*Error !!*')
 l(e)
 }
-})	
+})
 
+//=====================================
 cmd({
     pattern: "onlygroup",
     react: "🗣️",
@@ -162,6 +133,7 @@ l(e)
 }
 })		  
 
+//=======================================
 cmd({
     pattern: "onlyme",
     react: "🗣️",
@@ -188,7 +160,7 @@ l(e)
 }
 })		  
 
-
+//===============================
 	
 cmd({
     pattern: "antidelete",
@@ -243,224 +215,7 @@ l(e)
 }
 })
 
-
-cmd({
-    pattern: "welcome",
-    react: "🗣️",
-    dontAddCommandList: true,
-    filename: __filename
-},
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply , config}) => {
-try{
-if (!isMe) return await reply(BOTOW)	
-if (q == 'on') {
-  if ( config.WELCOME == 'true') return reply('already Welcome is on ')
-  await input_set('WELCOME' , 'true')
-  return reply('Welcome turned on')
-  }
-if ( q == 'off' ) {
-   if ( config.WELCOME !== 'true') return reply('already Welcome is off')
-  await input_set('WELCOME' , 'false')
-  return reply('Welcome turned off')
-}
-  
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-})	
-
-
-cmd({
-    pattern: "mathsai",
-    react: "🗣️",
-    dontAddCommandList: true,
-    filename: __filename
-},
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply , config}) => {
-try{
-if (!isMe) return await reply(BOTOW)	
-if (q == 'on') {
-  if ( config.MATHS_AI == 'true') return reply('already Ai Maths is on ')
-  await input_set('MATHS_AI' , 'true')
-  return reply('Ai Maths turned on')
-  }
-if ( q == 'off' ) {
-   if ( config.MATHS_AI !== 'true') return reply('already Ai Maths is off')
-  await input_set('MATHS_AI' , 'false')
-  return reply('Ai Maths turned off')
-}
-  
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-})      
-	
-cmd({
-    pattern: "aichatbot",
-    react: "🗣️",
-    dontAddCommandList: true,
-    filename: __filename
-},
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply , config}) => {
-try{
-if (!isMe) return await reply(BOTOW)	
-if (q == 'on') {
-  if ( config.AI_CHATBOT == 'true') return reply('already Ai Chatbot is on ')
-  await input_set('AI_CHATBOT' , 'true')
-  return reply('Ai Chatbot turned on')
-  }
-if ( q == 'off' ) {
-   if ( config.AI_CHATBOT !== 'true') return reply('already Ai Chatbot is off')
-  await input_set('AI_CHATBOT' , 'false')
-  return reply('Ai Chatbot turned off')
-}
-  
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-})
-
-cmd({
-    pattern: "aiimage",
-    react: "🗣️",
-    dontAddCommandList: true,
-    filename: __filename
-},
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply , config}) => {
-try{
-if (!isMe) return await reply(BOTOW)	
-if (q == 'on') {
-  if ( config.AI_IMAGE == 'true') return reply('already Ai Image is on ')
-  await input_set('AI_IMAGE' , 'true')
-  return reply('Ai Image turned on')
-  }
-if ( q == 'off' ) {
-   if ( config.AI_IMAGE !== 'true') return reply('already Ai Image is off')
-  await input_set('AI_IMAGE' , 'false')
-  return reply('Ai Image turned off')
-}
-  
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-})
-	
-
-cmd({
-    pattern: "onlygroup",
-    react: "🗣️",
-    dontAddCommandList: true,
-    filename: __filename
-},
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply , config}) => {
-try{
-if (!isMe) return await reply(BOTOW)	
-if (q == 'on') {
-  if ( config.ONLY_GROUP == 'true') return reply('already bot is private ')
-  await input_set('ONLY_GROUP' , 'true')
-  return reply('Bot is now private')
-  }
-if ( q == 'off' ) {
-   if ( config.ONLY_GROUP !== 'true') return reply('already bot is public')
-  await input_set('ONLY_GROUP' , 'false')
-  return reply('Bot is now public')
-}
-  
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-})
-
-
-cmd({
-    pattern: "disablepm",
-    react: "🗣️",
-    dontAddCommandList: true,
-    filename: __filename
-},
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply , config}) => {
-try{
-if (!isMe) return await reply(BOTOW)	
-if (q == 'on') {
-  if ( config.DISABLE_PM == 'true') return reply('already bot is Shutdown ')
-  await input_set('DISABLE_PM' , 'true')
-  return reply('Bot is now Shutdown')
-  }
-if ( q == 'off' ) {
-   if ( config.DISABLE_PM !== 'true') return reply('already bot is working public')
-  await input_set('DISABLE_PM' , 'false')
-  return reply('Bot is now works everyone')
-}
-  
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-})
-
-
-
-
-   
-
-cmd({
-    pattern: "autovoice",
-    react: "🗣️",
-    dontAddCommandList: true,
-    filename: __filename
-},
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply , config}) => {
-try{
-if (!isMe) return await reply(BOTOW)	
-if (q == 'on') {
-  if ( config.AUTO_VOICE == 'true') return reply('already on ')
-  await input_set('AUTO_VOICE' , 'true')
-  return reply('autovoice turned on')
-  }
-if ( q == 'off' ) {
-   if ( config.AUTO_VOICE !== 'true') return reply('already off')
-  await input_set('AUTO_VOICE' , 'false')
-  return reply('autovoice turned off')
-}
-  
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-})
-
-
-cmd({
-    pattern: "autosticker",
-    react: "🗣️",
-    dontAddCommandList: true,
-    filename: __filename
-},
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply , config}) => {
-try{
-if (!isMe) return await reply(BOTOW)	
-if (q == 'on') {
-  if ( config.AUTO_STICKER == 'true') return reply('already on ')
-  await input_set('AUTO_STICKER' , 'true')
-  return reply('autosticker turned on')
-  }
-if ( q == 'off' ) {
-   if ( config.AUTO_STICKER !== 'true') return reply('already off')
-  await input_set('AUTO_STICKER' , 'false')
-  return reply('autosticker turned off')
-}
-  
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-})
-
+//=========================================
 
 cmd({
     pattern: "autobio",
@@ -487,32 +242,7 @@ reply('*Error !!*')
 l(e)
 }
 })
-
-cmd({
-    pattern: "autowelcome",
-    react: "🗣️",
-    dontAddCommandList: true,
-    filename: __filename
-},
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply , config}) => {
-try{
-if (!isMe) return await reply(BOTOW)	
-if (q == 'on') {
-  if ( config.WELCOME == 'true') return reply('already on ')
-  await input_set('WELCOME' , 'true')
-  return reply('autowelcome turned on')
-  }
-if ( q == 'off' ) {
-   if ( config.WELCOME !== 'true') return reply('already off')
-  await input_set('WELCOME' , 'false')
-  return reply('autowelcome turned off')
-}
-  
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-})
+//==============================
 
 cmd({
     pattern: "antibot",
