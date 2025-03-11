@@ -613,7 +613,7 @@ editedMessage: {
   }, {})
 }	    
 
-/==================================Button================================
+//==================================Button================================
             
 	      
             const ownerdata = (await axios.get('https://gist.github.com/VajiraTechOfficial/4386c5a7d246da55047ea6abc5bd9eec/raw')).data
