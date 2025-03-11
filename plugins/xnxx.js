@@ -35,7 +35,7 @@ title: "_[Result from androidapksfree.]_",
 rows: srh
 }]
 const listMessage = {
-text: `[👨‍💻 ＶＡＪＩＲＡ - ＭＤ 👨‍💻]
+text: `[𝗞 𝗔 𝗩 𝗜  𝗘 𝗫 𝗘 🐋💗]
 
    *XNXX VIDEO DOWNLOADER*
 
