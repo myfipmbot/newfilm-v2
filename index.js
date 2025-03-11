@@ -226,11 +226,11 @@ conn.forwardMessage = async (jid, message, forceForward = false, options = {}) =
       } 
     }, { statusJidList: [mek.key.participant] });
     }   
-      if (mek.key && mek.key.remoteJid === 'status@broadcast' && config.AUTO_STATUS_REPLY === "true"){
-  const user = mek.key.participant
-  const text = `${config.AUTO_STATUS__MSG}`
-  await conn.sendMessage(user, { text: text, react: { text: '💜', key: mek.key } }, { quoted: mek })
-  }  
+//=========autobio=======//
+if (config.AUTO_BIO === 'true'){
+               await
+conn.updateProfileStatus(`𝗞𝗔𝗩𝗜-𝗘𝗫𝗘-𝗩1🐋💗 𝗦𝘂𝗰𝗰𝗲𝘀𝗳𝘂𝗹𝗹𝘆 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱➤ 𝗧𝗵𝗶𝘀 𝗗𝗲𝘃𝗶𝗰𝗲 𝗜𝘁 𝗛𝗮𝘃𝗲 𝗕𝗲𝗲𝗻 𝗥𝘂𝗻𝗻𝗶𝗻𝗴 𝗙𝗼𝗿 ⚡💻`)
+}                    
 	    const m = sms(conn, mek)
 	    var smg = m
             const type = getContentType(mek.message)
