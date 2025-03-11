@@ -1,4 +1,4 @@
-const { cmd, commands } = require('../command');
+const { cmd, commands } = require('../lib/command');
 const config = require('../config');
 const os = require('os');
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, fetchJson , runtime ,sleep } = require('../lib/functions')
