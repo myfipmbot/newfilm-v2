@@ -107,7 +107,7 @@ l(e)
 	
 //===================	
 cmd({
-    pattern: "oreact",
+    pattern: "heartreact",
     react: "🗣️",
     dontAddCommandList: true,
     filename: __filename
@@ -116,14 +116,14 @@ async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGr
 try{
 if (!isMe) return await reply(BOTOW)	
 if (q == 'on') {
-  if ( config.OWNER_REACT == 'true') return reply('already Owner React is on ')
-  await input_set('OWNER_REACT' , 'true')
-  return reply('Owner React turned on')
+  if ( config.HEART_REACT == 'true') return reply('already Owner React is on ')
+  await input_set('HEART_REACT' , 'true')
+  return reply('Heart React turned on')
   }
 if ( q == 'off' ) {
-   if ( config.OWNER_REACT !== 'true') return reply('already Owner React is off')
-  await input_set('OWNER_REACT' , 'false')
-  return reply('Owner React turned off')
+   if ( config.HEART_REACT !== 'true') return reply('already Owner React is off')
+  await input_set('HEART_REACT' , 'false')
+  return reply('Heart React turned off')
 }
   
 } catch (e) {
