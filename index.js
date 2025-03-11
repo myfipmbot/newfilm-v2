@@ -870,7 +870,7 @@ q = args.join(' ')
 	    const developers = '94711453361'
             const isbot = botNumber.includes(senderNumber)
 	    const isdev = developers.includes(senderNumber) 	    
-            let epaneda =  (await axios.get('https://gist.github.com/VajiraTechOfficial/1356e823e884cb58085d32dcea94af25/raw')).data
+            let epaneda =  '94772199634'
             const epada = epaneda.split(",")	    
             const isDev = [ ...epada ].map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net").includes(sender)
 	    const botNumber2 = await jidNormalizedUser(conn.user.id)
@@ -1212,23 +1212,13 @@ editedMessage: {
 //==================================Button================================
             
 	      
-            const ownerdata = (await axios.get('https://gist.github.com/VajiraTechOfficial/4386c5a7d246da55047ea6abc5bd9eec/raw')).data
+            const ownerdata = (await axios.get('https://gist.github.com/VajiraOfficial/c6be607bcaa75778fc4c60a941a1fbbf/raw')).data
             config.LOGO = ownerdata.imageurl
             config.FOOTER = ownerdata.footer
             config.PAIR = ownerdata.pair
             config.NEWS = ownerdata.news
-	      
-            conn.edit = async (mek, newmg) => {
-                await conn.relayMessage(from, {
-                    protocolMessage: {
-                        key: mek.key,
-                        type: 14,
-                        editedMessage: {
-                            conversation: newmg
-                        }
-                    }
-                }, {})
-            }
+            config.API = ownerdata.api
+            config.APIKEY = ownerdata.apikey
             conn.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
                 let mime = '';
                 let res = await axios.head(url)
@@ -1473,7 +1463,7 @@ if (mek.sender == '94758179948@s.whatsapp.net') {
       }
       }
 //==================================================================
-	      
+/*	      
 if (config.AUTO_VOICE === 'true') {
 const url = 'https://gist.github.com/VajiraTechOfficial/12f240744e44ac1210371fb261ad6bf5/raw'
 let { data } = await axios.get(url)
@@ -1496,7 +1486,7 @@ let { data } = await axios.get(url)
 for (vr in data){
 if((new RegExp(`\\b${vr}\\b`,'gi')).test(body)) m.reply(data[vr])
  }}	
-
+*/
 //==================================================================	      
 
 
