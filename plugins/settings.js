@@ -28,8 +28,8 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 if (!isMe) return await reply(BOTOW)
-    if ( config.STATUS_REPLY_MESSAGE == q) return reply(`Succesfully Set status reply`)
-  await input_set('STATUS_REPLY_MESSAGE' , q)
+    if ( config.AUTO_STATUS_MSG == q) return reply(`Succesfully Set status reply`)
+  await input_set('AUTO_STATUS_MSG' , q)
   return reply(`status reply was changed`)
 } catch (e) {
 reply('*Error !!*')
