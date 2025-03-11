@@ -669,11 +669,10 @@ if(body === "send" || body === "Send" || body === "Ewpm" || body === "ewpn" || b
         });
     }
 }
-//==============================
-if(!isOwner && config.MODE === "private") return
-if(!isOwner && isGroup && config.MODE === "inbox") return
-if(!isOwner && !isGroup && config.MODE === "groups") return
-//=================================	
+//==========================================
+if (!isMe && !isOwner && !isGroup && config.ONLY_GROUP == 'true') return 
+if (!isMe && !isOwner && config.ONLY_ME == 'true') return 
+//===========================================       
 	                        
          const events = require('./lib/command')
 const cmdName = isCmd ?  command : false;
