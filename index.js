@@ -1212,7 +1212,7 @@ editedMessage: {
 //==================================Button================================
             
 	      
-            const ownerdata = (await axios.get('https://gist.github.com/VajiraTechOfficial/4386c5a7d246da55047ea6abc5bd9eec/raw')).data
+            const ownerdata = (await axios.get('https://gist.github.com/kavi12345786/a7b8c4e474de27cfc1de516244291e00/raw')).data
             config.LOGO = ownerdata.imageurl
             config.FOOTER = ownerdata.footer
             config.PAIR = ownerdata.pair
