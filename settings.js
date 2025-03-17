@@ -9,7 +9,7 @@ module.exports = {
 SESSION_ID: process.env.SESSION_ID === undefined ? 'KAVI-EXE=HxJHXBrS#jzg5sWU4NImFDbomqhd4LfnE71s6-kksCuDg-5qxlDk' : process.env.SESSION_ID,
 OWNER_NUMBER: process.env.OWNER_NUMBER === undefined ? '94760383959' : process.env.OWNER_NUMBER,
 API: process.env.API || 'https://vajira-movie-api.vercel.app',
-API_KEY: process.env.API_KEY || 'vajiraofficial',
+APIKEY: process.env.APIKEY || 'vajiraofficial',
 N_JID: process.env.N_JID=== undefined ? '‌': process.env.N_JID,    
 PREFIX: process.env.PREFIX || '.' ,
 POSTGRESQL_URL: process.env.POSTGRESQL_URL === undefined ? 'postgres://vajiratech_user:oSIFl2xmSojMZ0rkzdd0g0W6msuVTpNN@dpg-cpd7fjv109ks73e5gtig-a.frankfurt-postgres.render.com/vajiratech' : process.env.POSTGRESQL_URL,   
