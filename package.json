@@ -65,6 +65,7 @@
     "discord-xp": "latest",  
     "sequelize": "^6.28.0",
         "sqlite3": "5.1.7",
+    "seedr": "latest",
     "adm-zip": "^0.5.16"
   }
 }
