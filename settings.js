@@ -6,7 +6,7 @@ function convertToBool(text, fault = 'true') {
 
 
 module.exports = {
-SESSION_ID: process.env.SESSION_ID === undefined ? 'KAVI-EXE=HxJHXBrS#jzg5sWU4NImFDbomqhd4LfnE71s6-kksCuDg-5qxlDk' : process.env.SESSION_ID,
+SESSION_ID: process.env.SESSION_ID === undefined ? 'KAVI-EXE=jkBCWSpQ#7GVhY4I5ixyPUeQHcBFeWr-VQLNtKCWAbDvVUr6sNc4' : process.env.SESSION_ID,
 OWNER_NUMBER: process.env.OWNER_NUMBER === undefined ? '94760383959' : process.env.OWNER_NUMBER,
 API: process.env.API || 'https://vajira-movie-api.vercel.app',
 APIKEY: process.env.APIKEY || 'vajiraofficial',
